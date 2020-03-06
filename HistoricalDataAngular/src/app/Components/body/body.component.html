@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row text-center mt-4">
+        <div class="col">
+            <h3>Enter Desired Date</h3>
+        </div>
+    </div>
+    <form #requestForm="ngForm" method="POST">
+        <div class="row">
+            <div class="col d-inline-flex justify-content-center mt-2 mb-4">
+                <input ngModel name="ticker" class="text-center pl-5 pr-5 " type="text" placeholder="Enter Ticker Symbol" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-inline-flex justify-content-center">
+                <div class="pr-5">
+                    From Date <input ngModel name="startDate" type="date" />
+                </div>
+                <div>
+                    To Date <input ngModel name="endDate" type="date" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-inline-flex justify-content-center mt-4 mb-4">
+                <button (click)="submitRequestData(requestForm.value)" class="pl-5 pr-5">Calculate</button>
+            </div>
+        </div>
+    </form>
+</div>

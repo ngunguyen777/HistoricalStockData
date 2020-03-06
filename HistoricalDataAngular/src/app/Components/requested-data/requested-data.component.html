@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <th class="w-50">Date</th>
+                    <th>Asjusted_Close</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of requestedData">
+                        <td>{{ data.date }}</td>
+                        <td>{{ data.adjusted_close }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <th>Variance Start to End Date</th>
+                </thead>
+                <tbody>
+                    <tr *ngIf="requestedData[0].variance > 0">
+                        <td>{{ requestedData[0].variance }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
